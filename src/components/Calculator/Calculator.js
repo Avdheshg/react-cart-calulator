@@ -1,6 +1,11 @@
 
 import {useState} from "react";
 
+import Add from "./Add";
+import Subtract from "./Subtract";
+import Multiply from "./Multiply";
+import Divide from "./Divide";
+
 function Calculator(props) {
 
     // 3 params to update
