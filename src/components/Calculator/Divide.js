@@ -1,8 +1,13 @@
 
 
-const Divide = () => {
+const Divide = (props) => {
+
+    const divideHander = () => {
+        props.onDivision(props.num1 / props.num2);
+    }
+
     return(
-        <div></div>
+        <button onClick={divideHander} > Divide </button> 
     );
 }
 

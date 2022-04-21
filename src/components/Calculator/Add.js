@@ -2,9 +2,14 @@
 
 const Add = (props) => {
     
+    // const addHandler = () => {
+    //     props.result = props.num1 + props.num2;
+    //     props.setResult(`After addition, result: `+ props.res);
+    // }
+
     const addHandler = () => {
-        props.result = props.num1 + props.num2;
-        props.setResult(`After addition, result: `+ props.res);
+        let res = props.num1 + props.num2;
+        props.onAddition(res);
     }
 
     return(

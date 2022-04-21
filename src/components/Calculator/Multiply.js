@@ -1,8 +1,14 @@
 
 
-const Multiply = () => {
+const Multiply = (props) => {
+
+    const multiplyHandler = () => {
+        let res = props.num1 * props.num2;
+        props.onMultiplication(res);
+    }
+
     return(
-        <div></div>
+        <button onClick={multiplyHandler} > Multiply </button>
     );
 }
 
@@ -11,3 +17,4 @@ export default Multiply;
 
 
 
+ 

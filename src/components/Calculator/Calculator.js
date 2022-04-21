@@ -15,25 +15,28 @@ function Calculator(props) {
     let num1 = props.num1;
     let num2 = props.num2;
 
-    const addHandler = () => {
-        res = num1 + num2;
-        console.log(res);
-        setResult(`After addition, result: `+ res);
+    const additionHandler = (addResult) => {
+        res = addResult;
+        console.log("res: ", res, "\naddResult: ", addResult);
+        setResult(`Add clicked, result: `+ res);
     }
 
-    const subHandler = () => {
-        res = num1 - num2;
-        setResult(`After subtraction, result: `+ res);
+    const subtractionHandler = (subtractResult) => {
+        console.log("Inside subtraction")
+        console.log("subtractResult: ", subtractResult);
+        setResult(`Subtract clicked, result: `+ subtractResult);
     }
 
-    const divideHandler = () => {
-        res = num1 / num2;
-        setResult(`After division, result: `+ res);
+    const multiplicationHanlder = (multiplyResult) => {
+        console.log("Inside multiplicationHanlder")
+        console.log("multiplyResult: ", multiplyResult);
+        setResult(`Multily clicked, result: `+ multiplyResult);
     }
 
-    const multiplyHandler = () => {
-        res = num1 * num2;
-        setResult(`After multiplication, result: `+ res);
+    const divisionHandler = (divideResult) => {
+        console.log("Inside divisionHandler")
+        console.log("divideResult: ", divideResult);
+        setResult(`Divide clicked, result: `+ divideResult);
     }
 
     return(
@@ -43,11 +46,11 @@ function Calculator(props) {
             <p> {props.num1} </p>
             <p> {props.num2} </p>
             <h1> {result} </h1>
-            <div>
-                <button onClick={addHandler} > Add </button>
-                <button onClick={subHandler} > Subtract </button>
-                <button onClick={divideHandler} > Divide </button>
-                <button onClick={multiplyHandler} > Multiply </button>
+            <div>   
+                <Add num1={num1} num2={num2} onAddition={additionHandler} ></Add>    
+                <Subtract num1={num1} num2={num2} onSubtraction={subtractionHandler} ></Subtract>
+                <Multiply num1={num1} num2={num2} onMultiplication={multiplicationHanlder} ></Multiply>
+                <Divide num1={num1} num2={num2} onDivision={divisionHandler} ></Divide>
             </div>
         </div>
     );

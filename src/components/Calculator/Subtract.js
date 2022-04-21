@@ -1,8 +1,14 @@
 
 
-const Subtract = () => {
+const Subtract = (props) => {
+
+    const subHandler = () => {
+        let res = props.num1 - props.num2;
+        props.onSubtraction(res);
+    }
+
     return(
-        <div></div>
+        <button onClick={subHandler} > Subtract </button>
     );
 }
 
