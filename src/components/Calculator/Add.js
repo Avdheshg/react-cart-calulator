@@ -8,7 +8,7 @@ const Add = (props) => {
     // }
 
     const addHandler = () => {
-        let res = props.num1 + props.num2;
+        let res = props.num1*1 + props.num2*1;
         props.onAddition(res);
     }
 

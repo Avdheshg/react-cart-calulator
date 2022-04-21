@@ -35,14 +35,16 @@ function App() {
   // ]
   
   //For calculator
-  let num1 = 10, num2 = 5, result = "Result";
+  // let num1 = 10, num2 = 5, result = "Result";
+  let result = "Result";
 
   return (
     <div>
       {/* <ColoredDiv colorDivData={colorDivData}></ColoredDiv> */}
       <hr />
       {/* <Cart title={title} amount={amount}></Cart> */}
-      <Calculator num1={num1} num2={num2} result={result} />
+      {/* <Calculator num1={num1} num2={num2} result={result} /> */}
+      <Calculator result={result}  />
     </div>
   );
 }

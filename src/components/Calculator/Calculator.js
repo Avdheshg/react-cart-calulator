@@ -7,13 +7,17 @@ import Multiply from "./Multiply";
 import Divide from "./Divide";
 
 function Calculator(props) {
+    
+    let res;
+    let num1;
+    let num2;
 
     // 3 params to update
     const [result, setResult] = useState(props.result); 
+    const [numOne, setNum1] = useState(num1);
 
-    let res;
-    let num1 = props.num1;
-    let num2 = props.num2;
+    const [numTwo, setNum2] = useState(num2);
+
 
     const additionHandler = (addResult) => {
         res = addResult;
@@ -39,18 +43,31 @@ function Calculator(props) {
         setResult(`Divide clicked, result: `+ divideResult);
     }
 
+    const num1InputHandler = (event) => {
+        // num1 = event.target.value;
+        // console.log(num1);
+        console.log(event.target.value);
+        setNum1(event.target.value);
+    }
+
+    const num2InputHandler = (event) => {
+        setNum2(event.target.value);
+    }
+
     return(
         <div>   
             <hr />
             <hr />
-            <p> {props.num1} </p>
-            <p> {props.num2} </p>
+            <input type="text" onChange={num1InputHandler} placeholder="num1" />
+            <input type="text" onChange={num2InputHandler} placeholder="num2" />
+            <p> Num1 {numOne} </p> 
+            <p> Num2 {numTwo} </p>
             <h1> {result} </h1>
             <div>   
-                <Add num1={num1} num2={num2} onAddition={additionHandler} ></Add>    
-                <Subtract num1={num1} num2={num2} onSubtraction={subtractionHandler} ></Subtract>
-                <Multiply num1={num1} num2={num2} onMultiplication={multiplicationHanlder} ></Multiply>
-                <Divide num1={num1} num2={num2} onDivision={divisionHandler} ></Divide>
+                <Add num1={numOne} num2={numTwo} onAddition={additionHandler} ></Add>    
+                <Subtract num1={numOne} num2={numTwo} onSubtraction={subtractionHandler} ></Subtract>
+                <Multiply num1={numOne} num2={numTwo} onMultiplication={multiplicationHanlder} ></Multiply>
+                <Divide num1={numOne} num2={numTwo} onDivision={divisionHandler} ></Divide>
             </div>
         </div>
     );
